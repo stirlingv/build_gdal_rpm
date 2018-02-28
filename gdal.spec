@@ -1,6 +1,6 @@
 Summary: Geospatial Data Abstraction Library
 Name: gdal
-Version: 2.0.2
+Version: 2.2.1
 Release: 1%{?dist}
 License: MIT/X
 Group: Applications/Engineering
@@ -128,13 +128,3 @@ rm -f /usr/local/lib/{libgeos*,libltidsdk*,libtbb*,liblti_lidar_dsdk*,liblaslib.
 %{_libdir}/lib*
 %{_libdir}/gdal-%{version}.jar
 %{_libdir}/pkgconfig/gdal.pc
-
-%changelog
-* Fri Feb 5 2016 amirahav <arahav@boundlessgeo.com> [2.0.2-1]
-- Upgraded to GDAL 2.0.2
-- Added MrSID/MrSID LiDAR
-* Sat Jan 16 2016 amirahav <arahav@boundlessgeo.com> [2.0.1-2]
-- Upgraded PostgreSQL to 9.5
-* Sat Jan 16 2016 BerryDaniel <dberry@boundlessgeo.com> [2.0.1-1]
-- Upgraded GDAL to 2.0.1
-- Upgraded java to 1.8
