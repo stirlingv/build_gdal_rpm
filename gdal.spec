@@ -41,8 +41,8 @@ Requires: xerces-c
 Requires: libkml
 Requires: openjpeg2
 
-Patch0: gdal_driverpath.patch
-Patch1: gdal_GDALmake.opt.in.patch
+#Patch0: gdal_driverpath.patch
+#Patch1: gdal_GDALmake.opt.in.patch
 
 %description
 The Geospatial Data Abstraction Library (GDAL) is a unifying C/C++ API for 
@@ -72,9 +72,9 @@ you will need to install %{name}-devel.
 %ifarch x86_64
 # In RedHat land, 32-bit libs go in /usr/lib and 64-bit ones go in /usr/lib64.
 # The default driver search paths need changing to reflect this.
-%patch0
+#%patch0
 %endif
-%patch1
+#%patch1
 
 %build
 
