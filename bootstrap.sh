@@ -1,7 +1,8 @@
 
 #!/usr/bin/env bash
 
-sudo yum -y install geos-devel proj-devel libkml-devel openjpeg2-devel postgresql95-devel poppler-devel xerces-c-devel ant chrpath
+sudo yum-builddep SPECS/gdal.spec 
+#sudo yum -y install geos-devel proj-devel libkml-devel openjpeg2-devel postgresql95-devel poppler-devel xerces-c-devel ant chrpath
 # version=`rpm -qa \*-release | grep -Ei "redhat|centos" | cut -d"-" -f3`
 # if [ $version == 7 ];then
 #   rpm -ivh http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm
