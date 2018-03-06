@@ -29,7 +29,7 @@ Summary:        GDAL/OGR - a translator library for raster and vector geospatial
 License:        MIT and BSD-3-Clause and SUSE-Public-Domain
 Group:          Development/Libraries/C and C++
 Url:            http://www.gdal.org/
-Source0:        http://download.osgeo.org/%{name}/%{version}/%{sourcename}-%{version}.tar.xz
+Source0:        SOURCES/%{name}/%{version}/%{sourcename}-%{version}.tar.xz
 Patch0:         gdal-perl.patch
 # Fix occasional parallel build failure
 Patch1:         GDALmake.opt.in.patch
