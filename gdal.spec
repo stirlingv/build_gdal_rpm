@@ -142,7 +142,7 @@ Summary:        GDAL Python module
 Group:          Development/Languages/Python
 Requires:       %{name} = %{version}-%{release}
 Provides:       python2-%{name} = %{version}
-%py_requires
+#%py_requires
 
 %description -n python-%{name}
 The GDAL python modules provide support to handle multiple GIS file formats.
