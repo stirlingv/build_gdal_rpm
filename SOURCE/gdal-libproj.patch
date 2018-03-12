@@ -1,0 +1,12 @@
+diff -rup a/ogr/ogrct.cpp b/ogr/ogrct.cpp
+--- a/ogr/ogrct.cpp	2017-04-28 18:07:33.000000000 +0200
++++ b/ogr/ogrct.cpp	2017-05-19 21:06:54.145528449 +0200
+@@ -102,7 +102,7 @@ static bool      bProjLocaleSafe = false
+ #elif defined(__APPLE__)
+ #  define LIBNAME "libproj.dylib"
+ #else
+-#  define LIBNAME "libproj.so"
++#  define LIBNAME "libproj.so.12"
+ #endif
+ 
+ /************************************************************************/
