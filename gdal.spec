@@ -46,7 +46,7 @@ BuildRequires:  doxygen >= 1.4.2
 BuildRequires:  fdupes
 BuildRequires:  gcc-c++
 BuildRequires:  geos-devel >= 3
-BuildRequires:  geotiff-devel >= 1.2.1
+BuildRequires:  libgeotiff-devel >= 1.2.1
 BuildRequires:  giflib-devel
 BuildRequires:  lapack-devel
 BuildRequires:  libexpat-devel >= 1.95.0
