@@ -67,16 +67,17 @@ BuildRequires:  opencl-headers
 BuildRequires:  openjpeg2-devel
 #BuildRequires:  perl-macros
 BuildRequires:  postgresql-devel
-BuildRequires:  python-numpy-devel #need added to yum repo
-BuildRequires:  python-setuptools
-BuildRequires:  python3-numpy-devel
-BuildRequires:  python3-setuptools
+#BuildRequires:  python-numpy-devel #need added to yum repo
+#BuildRequires:  python-setuptools
+#BuildRequires:  python3-numpy-devel
+#BuildRequires:  python3-setuptools
 BuildRequires:  sqlite-devel >= 3
 BuildRequires:  swig
 BuildRequires:  unixODBC-devel
 BuildRequires:  xz-devel
 BuildRequires:  zlib-devel >= 1.1.4
-BuildRequires:  pkgconfig #(poppler)
+#BuildRequires:  pkgconfig(poppler)
+BuildRequires:  pkgconfig
 %if %{with ecw_support}
 BuildRequires:  libecwj2-devel
 %endif
