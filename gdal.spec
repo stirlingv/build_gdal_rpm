@@ -49,25 +49,25 @@ BuildRequires:  geos-devel >= 3
 BuildRequires:  libgeotiff-devel >= 1.2.1
 BuildRequires:  giflib-devel
 BuildRequires:  lapack-devel
-BuildRequires:  libexpat-devel >= 1.95.0
+BuildRequires:  expat-devel >= 1.95.0
 # No more please we have openjpeg2
 # BuildRequires:  libjasper-devel
 # Using jasper create build error on arm, powerpc, s390
 BuildRequires:  libjpeg-devel
 BuildRequires:  libpng-devel
-BuildRequires:  libproj-devel
+BuildRequires:  proj-devel
 BuildRequires:  libspatialite-devel
 BuildRequires:  libtiff-devel >= 3.6.0
 BuildRequires:  libtool
-BuildRequires:  libxerces-c-devel
+BuildRequires:  xerces-c-devel
 BuildRequires:  libxml2-devel
 BuildRequires:  mysql-devel
 BuildRequires:  netcdf-devel
 BuildRequires:  opencl-headers
 BuildRequires:  openjpeg2-devel
-BuildRequires:  perl-macros
+#BuildRequires:  perl-macros
 BuildRequires:  postgresql-devel
-BuildRequires:  python-numpy-devel
+BuildRequires:  python-numpy-devel #need added to yum repo
 BuildRequires:  python-setuptools
 BuildRequires:  python3-numpy-devel
 BuildRequires:  python3-setuptools
@@ -76,7 +76,7 @@ BuildRequires:  swig
 BuildRequires:  unixODBC-devel
 BuildRequires:  xz-devel
 BuildRequires:  zlib-devel >= 1.1.4
-BuildRequires:  pkgconfig(poppler)
+BuildRequires:  pkgconfig #(poppler)
 %if %{with ecw_support}
 BuildRequires:  libecwj2-devel
 %endif
@@ -88,7 +88,7 @@ BuildRequires:  hdf5-devel
 BuildRequires:  libwebp-devel
 %endif
 %if 0%{?suse_version} > 1320
-BuildRequires:  libjson-c-devel
+BuildRequires:  json-c-devel
 BuildRequires:  ocl-icd-devel
 BuildRequires:  opencl-headers
 BuildRequires:  perl-ExtUtils-MakeMaker
@@ -216,6 +216,7 @@ autoreconf -fi
         --with-xerces=yes       \
         --with-xerces-lib="-lxerces-c" \
         --with-xerces-inc=%{_includedir}/xercesc \
+        --without-python        \
 %if %{with ecw_support}
         --with-ecw              \
         CFLAGS="$CFLAGS -pthread" \
