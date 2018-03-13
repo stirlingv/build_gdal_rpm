@@ -1,7 +1,6 @@
 diff -rup a/swig/perl/GNUmakefile b/swig/perl/GNUmakefile
---- a/swig/perl/GNUmakefile 2017-04-28 18:07:38.000000000 +0200
-+++ b/swig/perl/GNUmakefile 2017-05-19 21:09:04.906101672 +0200
-@@ -30,7 +30,7 @@ build: gdal_wrap.cc Makefile_Geo__GDAL
+
+build: gdal_wrap.cc Makefile_Geo__GDAL
 gdal_wrap.cc: generate
  
 Makefile_Geo__GDAL:
@@ -10,9 +9,8 @@ Makefile_Geo__GDAL:
 test: build
     $(MAKE) -f Makefile_Geo__GDAL test
 diff -rup a/swig/perl/Makefile b/swig/perl/Makefile
---- a/swig/perl/Makefile    2017-04-28 18:07:38.000000000 +0200
-+++ b/swig/perl/Makefile    2017-05-19 21:09:20.618146109 +0200
-@@ -7,7 +7,7 @@ build: Makefile_Geo__GDAL
+
+build: Makefile_Geo__GDAL
     $(MAKE) -f Makefile_Geo__OSR
 
 Makefile_Geo__GDAL:
