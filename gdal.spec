@@ -158,10 +158,10 @@ The GDAL python modules provide support to handle multiple GIS file formats.
 
 %prep
 %setup -q -n %{sourcename}-%{version}
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
+#%patch0 -p1
+#%patch1 -p1
+#%patch2 -p1
+#%patch3 -p1
 
 # Fix mandir
 sed -i "s|^mandir=.*|mandir='\${prefix}/share/man'|" configure
@@ -245,7 +245,7 @@ make %{?_smp_mflags} VERBOSE=1 all docs man
 
 # Make Python 3 module
 pushd swig/python
-  python3 setup.py build
+#  python3 setup.py build
 popd
 
 %install
@@ -253,7 +253,7 @@ popd
 # Install Python 3 module
 # Must be done first so executables are env python
 pushd swig/python
-  python3 setup.py install --prefix=%{_prefix} --root=%{buildroot}
+#  python3 setup.py install --prefix=%{_prefix} --root=%{buildroot}
 popd
 
 make %{?_smp_mflags} install install-man \
@@ -267,17 +267,17 @@ make %{?_smp_mflags} install install-man \
 rm -f html/do-not-remove
 
 # chrpath must be removed here
-chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
-chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
-chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/GNM/GNM.so
-chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/OGR/OGR.so
-chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/OSR/OSR.so
+#chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
+#chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
+#chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/GNM/GNM.so
+#chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/OGR/OGR.so
+#chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/OSR/OSR.so
 
-chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
-chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
-chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GNM/GNM.so
-chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/OGR/OGR.so
-chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/OSR/OSR.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GNM/GNM.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/OGR/OGR.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/OSR/OSR.so
 
 %if 0%{?suse_version} <= 1315
 # perl bs 0 length files cleanup
@@ -292,9 +292,9 @@ find %{buildroot}%{perl_vendorarch} -iname "*.bs" -exec rm -fv {} \;
 # do not ship these
 rm -rf %{buildroot}%{_mandir}/man1/_*
 rm -rf %{buildroot}%{_libdir}/libgdal.la
-rm -rf %{buildroot}%{perl_archlib}/perllocal.pod
-rm -rf %{buildroot}%{perl_vendorarch}/auto/Geo/*/.packlist
-rm -rf %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/.packlist
+#rm -rf %{buildroot}%{perl_archlib}/perllocal.pod
+#rm -rf %{buildroot}%{perl_vendorarch}/auto/Geo/*/.packlist
+#rm -rf %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/.packlist
 rm -rf %{buildroot}%{_bindir}/*.dox
 
 # avoid PACKAGE redefines
