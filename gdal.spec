@@ -210,8 +210,6 @@ find . -iname "*.py" -exec sed -i 's,^#!/usr/bin/env python$,#!/usr/bin/python3,
         --with-jpeg             \
         --with-spatialite       \
         --with-poppler          \
-#        --with-python           \
-#        --with-perl             \
         --with-mysql            \
         --with-freexl           \
         --with-xerces=yes       \
