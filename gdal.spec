@@ -73,7 +73,7 @@ BuildRequires:  postgresql-devel
 #BuildRequires:  python3-setuptools
 BuildRequires:  sqlite-devel >= 3
 BuildRequires:  swig
-BuildRequires:  unixODBC-devel
+#BuildRequires:  unixODBC-devel
 BuildRequires:  xz-devel
 BuildRequires:  zlib-devel >= 1.1.4
 #BuildRequires:  pkgconfig(poppler)
@@ -177,7 +177,7 @@ find . -iname "*.py" -exec sed -i 's,^#!/usr/bin/env python$,#!/usr/bin/python3,
 
 %build
 # need to regenerate (old one does not accept CFLAGS)
-autoreconf -fi
+#autoreconf -fi
 
 %configure \
         --prefix=%{_prefix}     \
@@ -210,8 +210,8 @@ autoreconf -fi
         --with-jpeg             \
         --with-spatialite       \
         --with-poppler          \
-        --with-python           \
-        --with-perl             \
+#        --with-python           \
+#        --with-perl             \
         --with-mysql            \
         --with-freexl           \
         --with-xerces=yes       \
@@ -281,7 +281,7 @@ rm -f html/do-not-remove
 
 %if 0%{?suse_version} <= 1315
 # perl bs 0 length files cleanup
-find %{buildroot}%{perl_vendorarch} -iname "*.bs" -exec rm -fv {} \;
+#find %{buildroot}%{perl_vendorarch} -iname "*.bs" -exec rm -fv {} \;
 # Those are deleted.
 #%%{perl_vendorarch}/auto/Geo/OSR/OSR.bs
 #%%{perl_vendorarch}/auto/Geo/OGR/OGR.bs
