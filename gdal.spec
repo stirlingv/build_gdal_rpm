@@ -85,7 +85,7 @@ BuildRequires:  libecwj2-devel
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  freexl-devel
-#BuildRequires:  hdf5-devel
+BuildRequires:  hdf5-devel
 BuildRequires:  libwebp-devel
 %endif
 %if 0%{?suse_version} > 1320
