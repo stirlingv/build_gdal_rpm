@@ -38,33 +38,33 @@ Patch1:         GDALmake.opt.in.patch
 Patch2:         gdal-libproj.patch
 # PATCH-FIX-UPSTREAM gdal-json-c-0.13.patch dimstar@opensuse.org -- Fix build with json-c 0.13; copied from gentoo
 Patch3:         gdal-json-c-0.13.patch
-BuildRequires:  blas-devel
-BuildRequires:  chrpath
+#BuildRequires:  blas-devel
+#BuildRequires:  chrpath
 BuildRequires:  curl-devel
-BuildRequires:  dos2unix
+#BuildRequires:  dos2unix
 BuildRequires:  doxygen >= 1.4.2
-BuildRequires:  fdupes
+#BuildRequires:  fdupes
 BuildRequires:  gcc-c++
-BuildRequires:  geos-devel >= 3
-BuildRequires:  libgeotiff-devel >= 1.2.1
+#BuildRequires:  geos-devel >= 3
+#BuildRequires:  libgeotiff-devel >= 1.2.1
 BuildRequires:  giflib-devel
-BuildRequires:  lapack-devel
+#BuildRequires:  lapack-devel
 BuildRequires:  expat-devel >= 1.95.0
 # No more please we have openjpeg2
 # BuildRequires:  libjasper-devel
 # Using jasper create build error on arm, powerpc, s390
-BuildRequires:  libjpeg-devel
+#BuildRequires:  libjpeg-devel
 BuildRequires:  libpng-devel
-BuildRequires:  proj-devel
-BuildRequires:  libspatialite-devel
-BuildRequires:  libtiff-devel >= 3.6.0
+#BuildRequires:  proj-devel
+#BuildRequires:  libspatialite-devel
+#BuildRequires:  libtiff-devel >= 3.6.0
 BuildRequires:  libtool
-BuildRequires:  xerces-c-devel
+#BuildRequires:  xerces-c-devel
 BuildRequires:  libxml2-devel
 BuildRequires:  mysql-devel
-BuildRequires:  netcdf-devel
-BuildRequires:  opencl-headers
-BuildRequires:  openjpeg2-devel
+#BuildRequires:  netcdf-devel
+#BuildRequires:  opencl-headers
+#BuildRequires:  openjpeg2-devel
 #BuildRequires:  perl-macros
 BuildRequires:  postgresql-devel
 #BuildRequires:  python-numpy-devel #need added to yum repo
@@ -74,7 +74,7 @@ BuildRequires:  postgresql-devel
 BuildRequires:  sqlite-devel >= 3
 BuildRequires:  swig
 #BuildRequires:  unixODBC-devel
-BuildRequires:  xz-devel
+#BuildRequires:  xz-devel
 BuildRequires:  zlib-devel >= 1.1.4
 #BuildRequires:  pkgconfig(poppler)
 BuildRequires:  pkgconfig
@@ -85,7 +85,7 @@ BuildRequires:  libecwj2-devel
 BuildRequires:  autoconf
 BuildRequires:  automake
 BuildRequires:  freexl-devel
-BuildRequires:  hdf5-devel
+#BuildRequires:  hdf5-devel
 BuildRequires:  libwebp-devel
 %endif
 %if 0%{?suse_version} > 1320
