@@ -47,14 +47,14 @@ BuildRequires:  doxygen >= 1.4.2
 BuildRequires:  gcc-c++
 #BuildRequires:  geos-devel >= 3
 #BuildRequires:  libgeotiff-devel >= 1.2.1
-BuildRequires:  giflib-devel
+#BuildRequires:  giflib-devel
 #BuildRequires:  lapack-devel
 BuildRequires:  expat-devel >= 1.95.0
 # No more please we have openjpeg2
 # BuildRequires:  libjasper-devel
 # Using jasper create build error on arm, powerpc, s390
 #BuildRequires:  libjpeg-devel
-BuildRequires:  libpng-devel
+#BuildRequires:  libpng-devel
 #BuildRequires:  proj-devel
 #BuildRequires:  libspatialite-devel
 #BuildRequires:  libtiff-devel >= 3.6.0
@@ -94,7 +94,7 @@ BuildRequires:  ocl-icd-devel
 BuildRequires:  opencl-headers
 BuildRequires:  perl-ExtUtils-MakeMaker
 %else
-BuildRequires:  hdf-devel >= 4.0
+#BuildRequires:  hdf-devel >= 4.0
 %endif
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
