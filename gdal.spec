@@ -228,7 +228,8 @@ find . -iname "*.py" -exec sed -i 's,^#!/usr/bin/env python$,#!/usr/bin/python3,
         --with-hdf5             \
         --with-webp             \
 %else
-        --with-hdf4             \
+        --without-hdf4          \
+        --with-hdf5             \
 %endif
         --disable-rpath
 
