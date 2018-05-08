@@ -43,7 +43,7 @@ Patch3:         gdal-json-c-0.13.patch
 BuildRequires:  curl-devel
 #BuildRequires:  dos2unix
 BuildRequires:  doxygen >= 1.4.2
-#BuildRequires:  fdupes
+BuildRequires:  fdupes
 BuildRequires:  gcc-c++
 #BuildRequires:  geos-devel >= 3
 #BuildRequires:  libgeotiff-devel >= 1.2.1
