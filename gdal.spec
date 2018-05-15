@@ -418,24 +418,24 @@ sed -i 's,\(#define PACKAGE_.*\),/* \1 */,' %{buildroot}%{_includedir}/gdal/cpl_
 %files -n perl-%{name}
 %defattr(-,root,root)
 %doc NEWS PROVENANCE.TXT LICENSE.TXT
-%{perl_vendorarch}/Geo/GDAL.pm
+#%{perl_vendorarch}/Geo/GDAL.pm
 %dir %{perl_vendorarch}/Geo/GDAL
-%{perl_vendorarch}/Geo/GDAL/Const.pm
-%{perl_vendorarch}/Geo/GNM.pm
-%{perl_vendorarch}/Geo/OGR.pm
-%{perl_vendorarch}/Geo/OSR.pm
-%dir %{perl_vendorarch}/Geo
-%dir %{perl_vendorarch}/auto/Geo
-%dir %{perl_vendorarch}/auto/Geo/GDAL
-%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
-%dir %{perl_vendorarch}/auto/Geo/GDAL/Const
-%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
-%dir %{perl_vendorarch}/auto/Geo/GNM
-%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GNM/GNM.so
-%dir %{perl_vendorarch}/auto/Geo/OGR
-%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OGR/OGR.so
-%dir %{perl_vendorarch}/auto/Geo/OSR
-%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OSR/OSR.so
+#%{perl_vendorarch}/Geo/GDAL/Const.pm
+#%{perl_vendorarch}/Geo/GNM.pm
+#%{perl_vendorarch}/Geo/OGR.pm
+#%{perl_vendorarch}/Geo/OSR.pm
+#%dir %{perl_vendorarch}/Geo
+#%dir %{perl_vendorarch}/auto/Geo
+#%dir %{perl_vendorarch}/auto/Geo/GDAL
+#%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
+#%dir %{perl_vendorarch}/auto/Geo/GDAL/Const
+#%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
+#%dir %{perl_vendorarch}/auto/Geo/GNM
+#%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GNM/GNM.so
+#%dir %{perl_vendorarch}/auto/Geo/OGR
+#%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OGR/OGR.so
+#%dir %{perl_vendorarch}/auto/Geo/OSR
+#%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OSR/OSR.so
 %{_mandir}/man3/Geo::GDAL.3*
 
 %files -n python-%{name}
