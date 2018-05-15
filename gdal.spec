@@ -273,4 +273,179 @@ rm -f html/do-not-remove
 #chmod 644 %{buildroot}%{perl_vendorarch}/auto/Geo/OSR/OSR.so
 
 #chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
-#chrpath --delete %{buildroot}%{p
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/GNM/GNM.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/OGR/OGR.so
+#chrpath --delete %{buildroot}%{perl_vendorarch}/auto/Geo/OSR/OSR.so
+
+%if 0%{?suse_version} <= 1315
+# perl bs 0 length files cleanup
+#find %{buildroot}%{perl_vendorarch} -iname "*.bs" -exec rm -fv {} \;
+# Those are deleted.
+#%%{perl_vendorarch}/auto/Geo/OSR/OSR.bs
+#%%{perl_vendorarch}/auto/Geo/OGR/OGR.bs
+#%%{perl_vendorarch}/auto/Geo/GDAL/GDAL.bs
+#%%{perl_vendorarch}/auto/Geo/GDAL/Const/Const.bs
+%endif
+
+# do not ship these
+rm -rf %{buildroot}%{_mandir}/man1/_*
+rm -rf %{buildroot}%{_libdir}/libgdal.la
+#rm -rf %{buildroot}%{perl_archlib}/perllocal.pod
+#rm -rf %{buildroot}%{perl_vendorarch}/auto/Geo/*/.packlist
+#rm -rf %{buildroot}%{perl_vendorarch}/auto/Geo/GDAL/Const/.packlist
+rm -rf %{buildroot}%{_bindir}/*.dox
+
+# avoid PACKAGE redefines
+sed -i 's,\(#define PACKAGE_.*\),/* \1 */,' %{buildroot}%{_includedir}/gdal/cpl_config.h
+
+%post -n lib%{name}%{soversion} -p /sbin/ldconfig
+
+%postun -n lib%{name}%{soversion} -p /sbin/ldconfig
+
+%files -n lib%{name}%{soversion}
+%defattr(644,root,root,755)
+%{_libdir}/*.so.%{soversion}.*
+%{_libdir}/*.so.%{soversion}
+
+%files
+%defattr(644,root,root,755)
+%doc NEWS PROVENANCE.TXT
+%defattr(755,root,root,755)
+%{_bindir}/epsg_tr.py
+%{_bindir}/esri2wkt.py
+%{_bindir}/gcps2vec.py
+%{_bindir}/gcps2wld.py
+%{_bindir}/gdal2tiles.py
+%{_bindir}/gdal2xyz.py
+%{_bindir}/gdal_auth.py
+%{_bindir}/gdal_calc.py
+%{_bindir}/gdal_contour
+%{_bindir}/gdal_edit.py
+%{_bindir}/gdal_fillnodata.py
+%{_bindir}/gdal_grid
+%{_bindir}/gdal_merge.py
+%{_bindir}/gdal_polygonize.py
+%{_bindir}/gdal_proximity.py
+%{_bindir}/gdal_pansharpen.py
+%{_bindir}/gdal_rasterize
+%{_bindir}/gdal_retile.py
+%{_bindir}/gdal_sieve.py
+%{_bindir}/gdal_translate
+%{_bindir}/gdaladdo
+%{_bindir}/gdalbuildvrt
+%{_bindir}/gdalchksum.py
+%{_bindir}/gdalcompare.py
+%{_bindir}/gdaldem
+%{_bindir}/gdalenhance
+%{_bindir}/gdalident.py
+%{_bindir}/gdalimport.py
+%{_bindir}/gdalinfo
+%{_bindir}/gdallocationinfo
+%{_bindir}/gdalmanage
+%{_bindir}/gdalmove.py
+%{_bindir}/gdalserver
+%{_bindir}/gdalsrsinfo
+%{_bindir}/gdaltindex
+%{_bindir}/gdaltransform
+%{_bindir}/gdalwarp
+%{_bindir}/gnmanalyse
+%{_bindir}/gnmmanage
+%{_bindir}/mkgraticule.py
+%{_bindir}/nearblack
+%{_bindir}/ogr2ogr
+%{_bindir}/ogrinfo
+%{_bindir}/ogrlineref
+%{_bindir}/ogrmerge.py
+%{_bindir}/ogrtindex
+%{_bindir}/pct2rgb.py
+%{_bindir}/rgb2pct.py
+%{_bindir}/testepsg
+%defattr(644,root,root,755)
+%{_datadir}/gdal
+%{_mandir}/man1/gdal2tiles.1*
+%{_mandir}/man1/gdal_calc.1*
+%{_mandir}/man1/gdal_contour.1*
+%{_mandir}/man1/gdal_edit.1*
+%{_mandir}/man1/gdal_fillnodata.1*
+%{_mandir}/man1/gdal_grid.1*
+%{_mandir}/man1/gdal_merge.1*
+%{_mandir}/man1/gdal_pansharpen.1*
+%{_mandir}/man1/gdal_polygonize.1*
+%{_mandir}/man1/gdal_proximity.1*
+%{_mandir}/man1/gdal_rasterize.1*
+%{_mandir}/man1/gdal_retile.1*
+%{_mandir}/man1/gdal_sieve.1*
+%{_mandir}/man1/gdal_translate.1*
+%{_mandir}/man1/gdal_utilities.1*
+%{_mandir}/man1/gdaladdo.1*
+%{_mandir}/man1/gdalbuildvrt.1*
+%{_mandir}/man1/gdalcompare.1*
+%{_mandir}/man1/gdaldem.1*
+%{_mandir}/man1/gdalinfo.1*
+%{_mandir}/man1/gdallocationinfo.1*
+%{_mandir}/man1/gdalmanage.1*
+%{_mandir}/man1/gdalmove.1*
+%{_mandir}/man1/gdalsrsinfo.1*
+%{_mandir}/man1/gdaltindex.1*
+%{_mandir}/man1/gdaltransform.1*
+%{_mandir}/man1/gdalwarp.1*
+%{_mandir}/man1/gnm_utilities.1*
+%{_mandir}/man1/gnmanalyse.1*
+%{_mandir}/man1/gnmmanage.1*
+%{_mandir}/man1/nearblack.1*
+%{_mandir}/man1/ogr2ogr.1*
+%{_mandir}/man1/ogr_utilities.1*
+%{_mandir}/man1/ogrinfo.1*
+%{_mandir}/man1/ogrlineref.1*
+%{_mandir}/man1/ogrmerge.1*
+%{_mandir}/man1/ogrtindex.1*
+%{_mandir}/man1/pct2rgb.1*
+%{_mandir}/man1/rgb2pct.1*
+
+%files devel
+%defattr(-,root,root)
+%doc NEWS PROVENANCE.TXT LICENSE.TXT
+%defattr(644,root,root,755)
+%doc html
+%attr(755,root,root) %{_bindir}/gdal-config
+%{_libdir}/libgdal.so
+%{_libdir}/pkgconfig/gdal.pc
+%dir %{_includedir}/gdal
+%{_includedir}/gdal/*.h
+%{_mandir}/man1/gdal-config.1*
+
+%files -n perl-%{name}
+%defattr(-,root,root)
+%doc NEWS PROVENANCE.TXT LICENSE.TXT
+%{perl_vendorarch}/Geo/GDAL.pm
+%dir %{perl_vendorarch}/Geo/GDAL
+%{perl_vendorarch}/Geo/GDAL/Const.pm
+%{perl_vendorarch}/Geo/GNM.pm
+%{perl_vendorarch}/Geo/OGR.pm
+%{perl_vendorarch}/Geo/OSR.pm
+%dir %{perl_vendorarch}/Geo
+%dir %{perl_vendorarch}/auto/Geo
+%dir %{perl_vendorarch}/auto/Geo/GDAL
+%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GDAL/GDAL.so
+%dir %{perl_vendorarch}/auto/Geo/GDAL/Const
+%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GDAL/Const/Const.so
+%dir %{perl_vendorarch}/auto/Geo/GNM
+%attr(755,root,root) %{perl_vendorarch}/auto/Geo/GNM/GNM.so
+%dir %{perl_vendorarch}/auto/Geo/OGR
+%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OGR/OGR.so
+%dir %{perl_vendorarch}/auto/Geo/OSR
+%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OSR/OSR.so
+%{_mandir}/man3/Geo::GDAL.3*
+
+%files -n python-%{name}
+%defattr(644,root,root,755)
+%doc NEWS PROVENANCE.TXT LICENSE.TXT
+%{python_sitearch}/*
+
+%files -n python3-%{name}
+%defattr(644,root,root,755)
+%doc NEWS PROVENANCE.TXT LICENSE.TXT
+%{python3_sitearch}/*
+
+%changelog
