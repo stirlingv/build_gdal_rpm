@@ -419,7 +419,7 @@ sed -i 's,\(#define PACKAGE_.*\),/* \1 */,' %{buildroot}%{_includedir}/gdal/cpl_
 %defattr(-,root,root)
 %doc NEWS PROVENANCE.TXT LICENSE.TXT
 #%{perl_vendorarch}/Geo/GDAL.pm
-%dir %{perl_vendorarch}/Geo/GDAL
+#%dir %{perl_vendorarch}/Geo/GDAL
 #%{perl_vendorarch}/Geo/GDAL/Const.pm
 #%{perl_vendorarch}/Geo/GNM.pm
 #%{perl_vendorarch}/Geo/OGR.pm
@@ -436,7 +436,7 @@ sed -i 's,\(#define PACKAGE_.*\),/* \1 */,' %{buildroot}%{_includedir}/gdal/cpl_
 #%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OGR/OGR.so
 #%dir %{perl_vendorarch}/auto/Geo/OSR
 #%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OSR/OSR.so
-%{_mandir}/man3/Geo::GDAL.3*
+#%{_mandir}/man3/Geo::GDAL.3*
 
 %files -n python-%{name}
 %defattr(644,root,root,755)
