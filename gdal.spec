@@ -438,14 +438,14 @@ sed -i 's,\(#define PACKAGE_.*\),/* \1 */,' %{buildroot}%{_includedir}/gdal/cpl_
 #%attr(755,root,root) %{perl_vendorarch}/auto/Geo/OSR/OSR.so
 #%{_mandir}/man3/Geo::GDAL.3*
 
-%files -n python-%{name}
-%defattr(644,root,root,755)
-%doc NEWS PROVENANCE.TXT LICENSE.TXT
-%{python_sitearch}/*
+#%files -n python-%{name}
+#%defattr(644,root,root,755)
+#%doc NEWS PROVENANCE.TXT LICENSE.TXT
+#%{python_sitearch}/*
 
-%files -n python3-%{name}
-%defattr(644,root,root,755)
-%doc NEWS PROVENANCE.TXT LICENSE.TXT
-%{python3_sitearch}/*
+#%files -n python3-%{name}
+#%defattr(644,root,root,755)
+#%doc NEWS PROVENANCE.TXT LICENSE.TXT
+#%{python3_sitearch}/*
 
 %changelog
